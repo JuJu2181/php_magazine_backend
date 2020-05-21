@@ -1,7 +1,5 @@
-<?php
- include 'config.php';
- include 'function.php';
+<?php 
+	include 'config.php';
+	include 'function.php';
 
- 
- 
- ?>
+?>
