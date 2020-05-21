@@ -10,14 +10,14 @@
     <title>Gentelella Alela! | </title>
 
     <!-- Bootstrap -->
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="../assets/nprogress/nprogress.css" rel="stylesheet">
+    <link href="assets/nprogress/nprogress.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="../assets/css/custom.min.css" rel="stylesheet">
+    <link href="assets/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -52,15 +52,15 @@
     </div>
 
     <!-- jQuery -->
-    <script src="../assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script src="../assets/js/fastclick.js"></script>
+    <script src="assets/js/fastclick.js"></script>
     <!-- NProgress -->
-    <script src="../assets/nprogress/nprogress.js"></script>
+    <script src="assets/nprogress/nprogress.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="../assets/js/custom.min.js"></script>
+    <script src="assets/js/custom.min.js"></script>
   </body>
 </html>
