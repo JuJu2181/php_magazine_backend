@@ -22,7 +22,7 @@
 		return $token;
 	}
 
-	function redirect($loc,$key,$message){
+	function redirect($loc,$key="",$message=""){
 		$_SESSION[$key]=$message;
 		@header('location: '.$loc);
 	}
