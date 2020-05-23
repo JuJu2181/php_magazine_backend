@@ -10,6 +10,8 @@
 				$this->conn = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME,DB_USER,DB_PASS);
 				$this->conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 				$this->conn->exec('SET NAMES utf8');
+				echo "database connected sucessfully";
+				return true;
 			}catch(PDOException $e){
 				error_log(Date("M d, Y h:i:s a").' : (DB Connection) : '.$e->getMessage()."\r\n",3,ERROR_PATH.'error.log');
 				return false;
@@ -98,7 +100,7 @@
 						}
 					}
 				}else{
-					throw new Exception("Data cannot be inserted without data");
+					throw new Exception("Data cannot be bind to insert without data");
 				}
 				//value bind ends
 
@@ -146,7 +148,7 @@
 				if (isset($this->table) && !empty($this->table)) {
 					$this->sql.=$this->table;
 				}else{
-					throw new Exception("Data cannot be insert without table name");
+					throw new Exception("Data cannot be selected without table name");
 				}
 				//table name ends
 
@@ -264,7 +266,7 @@
 					$this->sql.=$this->table;
 					$this->sql.=" SET ";
 				}else{
-					throw new Exception("Data cannot be insert without table name");
+					throw new Exception("Data cannot be updated without table name");
 					
 				}
 				//table name ends
@@ -281,7 +283,7 @@
 						$this->sql.=$data;
 					}
 				}else{
-					throw new Exception("Data cannot be inserted without data");
+					throw new Exception("Data cannot be updated without data");
 				}
 
 				if (isset($args['where']) && !empty($args['where'])) {
@@ -332,7 +334,7 @@
 						}
 					}
 				}else{
-					throw new Exception("Data cannot be inserted without data");
+					throw new Exception("Data cannot be bind to update without data");
 				}
 
 				if (isset($args['where']) && !empty($args['where'])) {
@@ -389,7 +391,7 @@
 				if (isset($this->table) && !empty($this->table)) {
 					$this->sql.=$this->table;
 				}else{
-					throw new Exception("Data cannot be insert without table name");
+					throw new Exception("Data cannot be deleted without table name");
 				}
 				//table name ends
 
