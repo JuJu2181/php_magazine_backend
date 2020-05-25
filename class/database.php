@@ -10,7 +10,7 @@
 				$this->conn = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME,DB_USER,DB_PASS);
 				$this->conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 				$this->conn->exec('SET NAMES utf8');
-				echo "database connected sucessfully";
+				//echo "database connected sucessfully";
 				return true;
 			}catch(PDOException $e){
 				error_log(Date("M d, Y h:i:s a").' : (DB Connection) : '.$e->getMessage()."\r\n",3,ERROR_PATH.'error.log');

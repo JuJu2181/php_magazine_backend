@@ -23,10 +23,24 @@
 		}
 		public function getUserbyEmail($email,$is_die=false){
 			$args = array(
-				'fields' => "username, email,password",
+				// 'fields' => "username, email,password",
 				'where' => array(
-						'or' => array(
+						'and' => array(
 							'email' => $email,
+							'status'=> 'Active'
+						)
+					)
+			);
+			return $this->getData($args,$is_die);
+		}
+
+		public function getUserbySessionToken($sessiontoken,$is_die=false){
+			$args = array(
+				
+				'where' => array(
+						'and' => array(
+							'session_token' => $sessiontoken,
+							'status'=> 'Active'
 						)
 					)
 			);

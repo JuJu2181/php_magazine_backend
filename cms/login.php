@@ -1,3 +1,7 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
+include 'inc/checklogin.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>Magazine | Login</title>
 
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -31,25 +35,29 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
+            <?php flashMessage();?>
+            <form action = "process/login" method = "post">
               <h1>Login Form</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" class="form-control" placeholder="Email" required="" name = "email" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" placeholder="Password" required="" name="password"/>
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
-                <a class="reset_pass" href="#">Lost your password?</a>
+                <input type="checkbox"  name="rememberme"/> Remember Me
+              </div>
+              <div>
+                <button class="btn btn-default submit"  type = "submit">Log in</button>
+                <!-- <a class="reset_pass" href="#">Lost your password?</a> -->
               </div>
 
               <div class="clearfix"></div>
 
               <div class="separator">
-                <p class="change_link">New to site?
+<!--                 <p class="change_link">New to site?
                   <a href="#signup" class="to_register"> Create Account </a>
-                </p>
+                </p> -->
 
                 <div class="clearfix"></div>
                 <br />
@@ -62,7 +70,7 @@
           </section>
         </div>
 
-        <div id="register" class="animate form registration_form">
+<!--         <div id="register" class="animate form registration_form">
           <section class="login_content">
             <form>
               <h1>Create Account</h1>
@@ -95,8 +103,11 @@
               </div>
             </form>
           </section>
-        </div>
+        </div> -->
       </div>
     </div>
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery.min.js"></script>
   </body>
 </html>

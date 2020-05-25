@@ -1,3 +1,6 @@
 
 
 May 23, 2020 12:09:40 pm : (addData) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'kingleon@mail.com' for key 'email'
+May 24, 2020 11:51:03 am : (addData) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'khwopa@mail.com' for key 'email'
+May 24, 2020 11:51:36 am : (addData) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'khwopa@mail.com' for key 'email'
+May 24, 2020 01:08:10 pm : (addData) : Data cannot be updated without data
