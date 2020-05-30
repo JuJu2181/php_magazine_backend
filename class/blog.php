@@ -1,39 +1,46 @@
 <?php 
-	class category extends database{
+	class blog extends database{
 		function __construct(){
-			$this->table = 'categories';
+			$this->table = 'blogs';
 			database::__construct();
 		}
 
-		public function addCategory($data,$is_die=false){
+		public function addBlog($data,$is_die=false){
 			return $this->addData($data,$is_die);
 		}
 
-		public function getCategorybyId($category_id,$is_die=false){
+		public function getBlogbyId($blog_id,$is_die=false){
 			$args = array(
-				// 'fields' => "categoryname, email,password",
 				'where' => array(
 						'or' => array(
-							'id' => $category_id,
+							'id' => $blog_id,
+						)
+					)
+			);
+			return $this->getData($args,$is_die);
+		}
+
+		public function getAllBlog($is_die=false){
+			$args = array(
+				'fields' => ['id',
+					            'title',
+					            'content',
+					            'featured',
+					            'categoryid',
+					            '(SELECT categoryname from categories where id = categoryid) as category',
+					            'view',
+					            'image'],
+					            
+				'where' => array(
+						'or' => array(
+							'status'=>'Active',
 						)
 					)
 			);
 			return $this->getData($args,$is_die);
 		}
 		
-        public function getAllCategory($is_die=false){
-			$args = array(
-				'where' => array(
-						'or' => array(
-							'status'=>'Active',
-						)
-					),
-				'order'=>'ASC'
-			);
-			return $this->getData($args,$is_die);
-		}
-
-		public function updateCategoryById($data,$id,$is_die=false){
+       public function updateBlogById($data,$id,$is_die=false){
 			$args = array(
 				'where' => array(
 						'or' => array(
@@ -44,7 +51,7 @@
 			return $this->updateData($data,$args,$is_die);
 		}
 
-		public function deleteCategoryById($id,$is_die=false){
+		public function deleteBlogById($id,$is_die=false){
 			$args = array(
 				'where' => array(
 						'or' => array(
@@ -57,3 +64,4 @@
 	}
 
  ?>
+

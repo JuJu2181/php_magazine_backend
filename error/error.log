@@ -4,3 +4,41 @@ May 23, 2020 12:09:40 pm : (addData) : SQLSTATE[23000]: Integrity constraint vio
 May 24, 2020 11:51:03 am : (addData) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'khwopa@mail.com' for key 'email'
 May 24, 2020 11:51:36 am : (addData) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'khwopa@mail.com' for key 'email'
 May 24, 2020 01:08:10 pm : (addData) : Data cannot be updated without data
+May 28, 2020 12:13:59 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.categories' doesn't exist
+May 28, 2020 12:14:34 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.categories' doesn't exist
+May 28, 2020 12:14:34 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.categories' doesn't exist
+May 28, 2020 12:16:11 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.categories' doesn't exist
+May 28, 2020 12:16:11 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.categories' doesn't exist
+May 28, 2020 06:50:06 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.categories' doesn't exist
+May 29, 2020 09:39:52 am : (run Query database) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin@magazine.com' for key 'email'
+May 30, 2020 09:35:09 am : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.ads' doesn't exist
+May 30, 2020 09:35:28 am : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.ads' doesn't exist
+May 30, 2020 09:36:37 am : (run Query database) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin@magazine.com' for key 'email'
+May 30, 2020 11:45:01 am : (addData) : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'categoryid' in 'field list'
+May 30, 2020 11:45:48 am : (addData) : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'categoryid' in 'field list'
+May 30, 2020 11:46:55 am : (addData) : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'categoryid' in 'field list'
+May 30, 2020 11:53:52 am : (addData) : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'categoryid' in 'field list'
+May 30, 2020 01:49:48 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.advertisements' doesn't exist
+May 30, 2020 01:50:05 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.advertisements' doesn't exist
+May 30, 2020 01:52:14 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.advertisements' doesn't exist
+May 30, 2020 01:52:26 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.advertisements' doesn't exist
+May 30, 2020 01:53:09 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.advertisements' doesn't exist
+May 30, 2020 01:53:19 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.advertisements' doesn't exist
+May 30, 2020 01:54:03 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.advertisements' doesn't exist
+May 30, 2020 01:54:30 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.advertisements' doesn't exist
+May 30, 2020 01:54:41 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.advertisements' doesn't exist
+May 30, 2020 01:54:42 pm : (addData) : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.advertisements' doesn't exist
+May 30, 2020 01:54:50 pm : (run Query database) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin@magazine.com' for key 'email'
+May 30, 2020 02:03:21 pm : (run Query database) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin@magazine.com' for key 'email'
+May 30, 2020 02:41:09 pm : (run Query database) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin@magazine.com' for key 'email'
+May 30, 2020 04:03:14 pm : (run Query database) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin@magazine.com' for key 'email'
+May 30, 2020 05:39:11 pm : (run Query database) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin@magazine.com' for key 'email'
+May 30, 2020 05:41:08 pm : (addData) : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'icon' in 'field list'
+May 30, 2020 05:41:48 pm : (addData) : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'icon' in 'field list'
+May 30, 2020 06:03:02 pm : (run Query database) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin@magazine.com' for key 'email'
+May 30, 2020 06:04:30 pm : (addData) : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'adTitle' in 'field list'
+May 30, 2020 06:06:13 pm : (addData) : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'adTitle' in 'field list'
+May 30, 2020 06:06:25 pm : (addData) : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'adTitle' in 'field list'
+May 30, 2020 06:08:04 pm : (run Query database) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin@magazine.com' for key 'email'
+May 30, 2020 06:17:30 pm : (run Query database) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin@magazine.com' for key 'email'
+May 30, 2020 06:19:53 pm : (run Query database) : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin@magazine.com' for key 'email'

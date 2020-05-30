@@ -43,5 +43,3 @@
      // $datas = $user->deleteUserByEmail('khwopa@mail.com') ;
      // debugger($datas);
 	 ?>
-
-
