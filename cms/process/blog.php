@@ -12,7 +12,7 @@
 				'status' => 'Active',
 				'added_by' => $_SESSION['user_id']
 			);
-		// debugger($data);
+		 debugger($data);
 		if (isset($_FILES) && !empty($_FILES) && !empty($_FILES['image']) && $_FILES['image']['error'] == 0) {
 			$success=uploadImage($_FILES['image'],'blog');
 			if ($success) {
@@ -38,7 +38,10 @@
 
 		if ($blog_id) {
 			$blog_info = $Blog->getBlogbyId($blog_id);
+			//debugger($blog_info);
 			if ($blog_info) {
+				//debugger($_SESSION['user_id']) ;
+				//debugger($blog_info[0],true);
 				if ($_SESSION['user_id'] == $blog_info[0]->added_by) {
 					$success = $Blog->updateBlogById($data,$blog_id);
 				}else{

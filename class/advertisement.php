@@ -24,6 +24,13 @@
 		public function getAllAdvertisement($is_die=false){
 			
 			$args = array(
+				'fields' => ['id',
+					            'adTitle',
+					            'url',
+					            'type',
+					            'image',
+								'created_date'],
+								
 				'where'	=> array(
 					'and' => array(
 							'status' => 'Active',
@@ -31,6 +38,29 @@
 					)
 				);
 
+			return $this->getData($args,$is_die);
+		}
+		
+		public function getLatestAdByType($adtype,$is_die=false){
+			$args = array(
+				'fields' => ['id',
+					            'adTitle',
+					            'url',
+					            'type',
+					            'image',
+					        	'created_date'],
+					            
+				'where' => array(
+						'and' => array(
+							'status'=>'Active',
+							'type' => $adtype
+						)
+					),
+				'limit' => array(
+							'offset' => 0,
+							'no_of_data' => 1
+				 		)
+			);
 			return $this->getData($args,$is_die);
 		}
 

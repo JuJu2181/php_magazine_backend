@@ -2,16 +2,16 @@
 $header = "Home";
  include 'inc/header.php';
  include 'inc/checklogin.php'; ?>
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div class="">
-            <?php flashMessage();?>
-            <div class="page-title">
-              <div class="title_left">
-                <h3>Dashboard</h3>
-              </div>
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <?php flashMessage();?>
+    <div class="page-title">
+      <div class="title_left">
+        <h3>BrawlMag Dashboard</h3>
+      </div>
 
-<!--               <div class="title_right">
+      <!--               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search for...">
@@ -21,16 +21,16 @@ $header = "Home";
                   </div>
                 </div>
               </div> -->
-            </div>
+    </div>
 
-            <div class="clearfix"></div>
+    <div class="clearfix"></div>
 
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Dashboard</h2>
-                    <!-- <ul class="nav navbar-right panel_toolbox">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Dashboard</h2>
+            <!-- <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                       <li class="dropdown">
@@ -45,16 +45,17 @@ $header = "Home";
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul> -->
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      Add content to the page ...
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            This is the dashboard for BrawlMag magazine.<br>
+            BrawlMag is developed my Anish Shilpakar
           </div>
         </div>
-        <!-- /page content -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
 
-       <?php include 'inc/footer.php';?>
+<?php include 'inc/footer.php';?>
