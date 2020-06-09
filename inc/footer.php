@@ -64,12 +64,12 @@
 			<div class="col-md-3">
 				<div class="footer-widget">
 					<h3 class="footer-title">Join our Community</h3>
-					<!-- <div class="footer-newsletter">
-								<form>
-									<input class="input" type="email" name="newsletter" placeholder="Enter your email">
+					<div class="footer-newsletter">
+								<form action="process/subscriber" method="post" >
+									<input class="input" type="email" name="email" placeholder="Enter your email">
 									<button class="newsletter-btn"><i class="fa fa-paper-plane"></i></button>
 								</form>
-							</div> -->
+							</div>
 					<ul class="footer-social">
 						<?php 
 							$Social = new social(); 

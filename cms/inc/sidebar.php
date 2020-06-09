@@ -49,6 +49,12 @@
                     </ul>
                   </li>
 
+                  <li><a><i class="fa fa-table"></i> Subscribers <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="newsletter">Subscriber list</a></li>
+                    </ul>
+                  </li>
+
                 </ul>
               </div>
 

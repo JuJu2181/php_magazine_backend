@@ -45,6 +45,23 @@
 			);
 			return $this->getData($args,$is_die);
 		}
+		
+		public function getBlogbySearchKey($search_key,$is_die=false){
+			$args = array(
+				'fields' => ['id',
+					            'title',
+					            'content',
+					            'featured',
+					            'categoryid',
+					            '(SELECT categoryname from categories where id = categoryid) as category',
+					            'view',
+					            'image',
+								'created_date'
+							],
+				'where' => " where title LIKE '%".$search_key."%'",
+			);
+			return $this->getData($args,$is_die);
+		}
 
 		public function getAllBlog($is_die=false){
 			$args = array(
@@ -59,7 +76,7 @@
 					            
 				'where' => array(
 						'or' => array(
-							'status'=>'Active',
+							'status'=>'Active'
 						)
 					)
 			);
@@ -181,7 +198,8 @@
 					            '(SELECT categoryname from categories where id = categoryid) as category',
 					            'view',
 					            'image',
-					        	'created_date'],
+								'created_date'
+							    ],
 					            
 				'where' => array(
 						'and' => array(
@@ -237,6 +255,17 @@
 			);
 			return $this->getData($args,$is_die);
 		}
+
+        public function getNumberBlogBySearchText($search_key,$is_die=false){
+			$args = array(
+				'fields' => ['COUNT(id) as total'],
+				'where' => " where title LIKE '%".$search_key."%'",	
+			);
+
+			return $this->getData($args,$is_die);
+		}
+
+
 		public function getAllPopularBlogByCategoryWithLimit($cat_id,$offset,$no_of_data,$is_die=false){
 			$args = array(
 				'fields' => ['id',

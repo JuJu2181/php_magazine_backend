@@ -127,12 +127,7 @@
 							?>
  					<!-- end of featured posts     -->
 
-
-
-
-
-
- 					<div class="clearfix visible-md visible-lg"></div>
+                    <div class="clearfix visible-md visible-lg"></div>
 
  					<!-- wide ad -->
  					<div class="col-md-12">
