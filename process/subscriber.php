@@ -13,7 +13,7 @@
 			$newsletter_info = $Newsletter->getNewsletterbyEmail($data['email']);
 			if ($newsletter_info) {
 				// $success = $Newsletter->addNewsletter($data);
-				redirect('../index','success','You have already subscribed to our newsletter. Thank you');
+				redirect('../index','success','This user has already subscribed to our newsletter. Thank you');
 			}else{
 				$success = $Newsletter->addNewsletter($data);
 			}

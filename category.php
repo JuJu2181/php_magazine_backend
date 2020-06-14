@@ -20,6 +20,7 @@
 
 	include 'inc/header.php';
 ?>
+
  <!-- section -->
  <div class="section">
  	<!-- container -->
@@ -158,7 +159,8 @@
  					<!-- start of recent posts -->
  					<h2 class="col-md-12">Latest Posts </h2>
  					<?php 
-								$recentBlog = $Blog->getAllRecentBlogByCategoryWithLimit($cat_id,0,4);
+								//$recentBlog = $Blog->getAllRecentBlogByCategoryWithLimit($cat_id,0,4);
+								$recentBlog = $Blog->getAllRecentBlogByCategory($cat_id);
 								if ($recentBlog) {
 									foreach ($recentBlog as $key => $blog) {
 										if (isset($blog->image) && !empty($blog->image) && file_exists(UPLOAD_PATH.'blog/'.$blog->image)) {
@@ -170,7 +172,7 @@
  					<!-- post -->
  					<div class="col-md-12">
 
- 						<div class="post post-row">
+ 						<div class="post post-row loadPost">
 
  							<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img
  									src="<?php echo($thumbnail); ?>" class="img-responsive" style="height:200px"></a>
@@ -202,7 +204,7 @@
  					<!-- load more button -->
  					<div class="col-md-12">
  						<div class="section-row">
- 							<button class="primary-button center-block">Load More</button>
+ 							<button class="primary-button center-block" id="loadMore">Load More</button>
  						</div>
  					</div>
  				</div>
@@ -252,11 +254,12 @@
 							?>
  					<div class="post post-widget">
  						<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img
- 								src="<?php echo($thumbnail); ?>" alt=""></a>
+ 								src="<?php echo($thumbnail); ?>" class="img-responsive" style="height:60px"></a>
  						<div class="post-body">
  							<h3 class="post-title"><a
  									href="blog-post?id=<?php echo $blog->id ?>"><?php echo $blog->title; ?></a></h3>
- 						</div>
+									 <p><?php echo($blog->view == ""? 0:$blog->view) ?> Views</p>     						
+						 </div>
  					</div>
 
  					<?php
@@ -356,3 +359,4 @@
  <!-- /section -->
 
  <?php include 'inc/footer.php'; ?>
+

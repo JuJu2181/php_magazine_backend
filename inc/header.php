@@ -35,6 +35,13 @@
 
 </head>
 
+<!-- Added Css for load more -->
+<style>
+	.loadPost{
+		display : none;
+    }
+</style>
+
 <body>
 
 	<!-- Header -->

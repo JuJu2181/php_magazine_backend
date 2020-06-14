@@ -17,7 +17,7 @@
 				<!-- row -->
 				<div class="row"> 
 					<div class="col-md-8">
-						<?php 
+                        <?php 
 							$Blog = new blog();
                             $blogs = $Blog->getBlogbySearchKey($search_key);
                             //debugger($blogs,true);
@@ -50,6 +50,7 @@
 							}else{
                                 echo "<h3>Sorry, No search results were found for '".$search_key."' .<br> <br>Try Searching something else</h3>";
                             }
+
 						?>
 					</div>
 

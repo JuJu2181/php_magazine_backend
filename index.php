@@ -3,6 +3,7 @@
 	include 'inc/header.php';
  ?>
 
+
 <!-- section -->
 <div class="section">
 	<!-- container -->
@@ -263,10 +264,11 @@
 							?>
 					<div class="post post-widget">
 						<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img
-								src="<?php echo($thumbnail); ?>" alt=""></a>
+								src="<?php echo($thumbnail); ?>" class="img-responsive" style="height:60px"></a>
 						<div class="post-body">
 							<h3 class="post-title"><a
 									href="blog-post?id=<?php echo $blog->id ?>"><?php echo $blog->title; ?></a></h3>
+									<p><?php echo($blog->view == ""? 0:$blog->view) ?> Views</p>
 						</div>
 					</div>
 
@@ -434,7 +436,7 @@
 					<!-- post -->
 					<div class="col-md-12">
 						<?php 
-								$popularBlog = $Blog->getAllPopularBlogsWithLimit(0,4);
+								$popularBlog = $Blog->getAllPopularBlogs();
 								if ($popularBlog) {
 									foreach ($popularBlog as $key => $blog) {
 										if (isset($blog->image) && !empty($blog->image) && file_exists(UPLOAD_PATH.'blog/'.$blog->image)) {
@@ -443,7 +445,7 @@
 											$thumbnail = UPLOAD_URL.'noimg.jpg';
 										}
 							?>
-						<div class="post post-row">
+						<div class="post post-row loadPost">
 							<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img
 									src="<?php echo($thumbnail); ?>" alt=""></a>
 							<div class="post-body">
@@ -455,6 +457,7 @@
 									<!-- error ingetting name of category -->
 									<span
 										class="post-date"><?php echo date("M d, Y",strtotime($blog->created_date)); ?></span>
+										<br><br><p><?php echo($blog->view == ""? 0:$blog->view) ?> Views</p>
 								</div>
 							</div>
 						</div>
@@ -470,7 +473,7 @@
 
 					<div class="col-md-12">
 						<div class="section-row">
-							<button class="primary-button center-block">Load More</button>
+							<button class="primary-button center-block" id = "loadMore">Load More</button>
 						</div>
 					</div>
 				</div>

@@ -187,6 +187,28 @@
 			);
 			return $this->getData($args,$is_die);
 		}
+		
+		public function getAllRecentBlogByCategory($cat_id,$is_die=false){
+			$args = array(
+				'fields' => ['id',
+					            'title',
+					            'content',
+					            'featured',
+					            'categoryid',
+					            '(SELECT categoryname from categories where id = categoryid) as category',
+					            'view',
+					            'image',
+					        	'created_date'],
+					            
+				'where' => array(
+						'and' => array(
+							'status'=>'Active',
+							'categoryid'=>$cat_id
+						)
+					)
+			);
+			return $this->getData($args,$is_die);
+		}
 
 		public function getAllRecentBlogsWithLimit($offset,$no_of_data,$is_die=false){
 			$args = array(
@@ -322,6 +344,32 @@
 							'offset' => $offset,
 							'no_of_data' => $no_of_data	
 				 		)
+			);
+			return $this->getData($args,$is_die);
+		}
+
+		public function getAllPopularBlogs($is_die=false){
+			$args = array(
+				'fields' => ['id',
+					            'title',
+					            'content',
+					            'featured',
+					            'categoryid',
+					            '(SELECT categoryname from categories where id = categoryid) as category',
+					            'view',
+					            'image',
+					        	'created_date'],
+					            
+				'where' => array(
+						'and' => array(
+							'status'=>'Active',
+						)
+					),
+				'order' =>array(
+						'columnname'=>'view',
+						'orderType'=>'DESC'
+					),
+				
 			);
 			return $this->getData($args,$is_die);
 		}
