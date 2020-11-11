@@ -36,25 +36,32 @@
 					<div class="main-post">
 						<?php echo html_entity_decode($blog_info->content); ?>
 					</div>
-					<!-- <div class="post-shares sticky-shares">
-								<a href="#" class="share-facebook"><i class="fa fa-facebook"></i></a>
-								</div> -->
+
+							<div class="a2a_kit a2a_kit_size_40 sticky-shares post-shares">
+                               <a class="a2a_button_facebook"></a>
+                               <a class="a2a_button_twitter"></a>
+							   <a class="a2a_button_reddit"></a>
+							   <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                            </div>
+                               <script async src="https://static.addtoany.com/menu/page.js"></script>
 					<!-- social icons			 -->
-					<div class="post-shares sticky-shares">
+					<!-- <div class="post-shares sticky-shares">
 						<?php 
-							$Social = new social(); 
-							$socialicons = $Social->getAllSocialIcons();
-							if($socialicons){
-								foreach($socialicons as $key => $socialicon){
+							// $Social = new social(); 
+							// $socialicons = $Social->getAllSocialIcons();
+							// if($socialicons){
+							// 	foreach($socialicons as $key => $socialicon){
 							?>
-						<a href="<?php echo $socialicon->url;?>"
-							class="<?php echo('share-'.strtolower($socialicon->iconname));?>"><i
-								class="<?php echo ('fa fa-'.strtolower($socialicon->iconname));?>"></i></a>
+						<!-- <a href="<?php //echo $socialicon->url;?>"
+							class="<?php //echo('share-'.strtolower($socialicon->iconname));?>"><i
+								class="<?php //echo ('fa fa-'.strtolower($socialicon->iconname));?>"></i></a> -->
 						<?php		
-								}
-							}
+							//	}
+							//}
 							?>
-					</div>
+					<!-- </div>  -->
+
+					
 				</div>
 
 
@@ -343,14 +350,14 @@
 				</div>
 				<!-- /ad -->
 
-				<!-- Most Read -->
+				<!-- post widget Most Read-->
 				<div class="aside-widget">
 					<div class="section-title">
 						<h2>Most Read</h2>
 					</div>
 
 					<?php 
-								$popularBlog = $Blog->getAllPopularBlogByCategoryWithLimit($blog_info->categoryid,0,4);
+								$popularBlog = $Blog->getAllPopularBlogsWithLimit(0,4);
 								if ($popularBlog) {
 									foreach ($popularBlog as $key => $blog) {
 										if (isset($blog->image) && !empty($blog->image) && file_exists(UPLOAD_PATH.'blog/'.$blog->image)) {
@@ -361,10 +368,11 @@
 							?>
 					<div class="post post-widget">
 						<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img
-								src="<?php echo($thumbnail); ?>" alt=""></a>
+								src="<?php echo($thumbnail); ?>" class="img-responsive" style="height:60px"></a>
 						<div class="post-body">
 							<h3 class="post-title"><a
 									href="blog-post?id=<?php echo $blog->id ?>"><?php echo $blog->title; ?></a></h3>
+									<p><?php echo($blog->view == ""? 0:$blog->view) ?> Views</p>
 						</div>
 					</div>
 
@@ -372,21 +380,17 @@
 									}
 								}
 							?>
+				</div>			
+					<!-- /post widget -->
 
-
-				</div>
-				<!-- /post widget -->
-
-
-				<!-- Featured Blogs -->
-				<div class="aside-widget">
-					<div class="section-title">
-						<h2>Featured Posts</h2>
-					</div>
-
-					<?php 
+					<!-- post widget Featured Posts-->
+					<div class="aside-widget">
+						<div class="section-title">
+							<h2>Featured Posts</h2>
+						</div>
+						<?php 
 						        $Blog = new blog();
-								$recentBlog = $Blog->getAllFeaturedBlogByCategoryWithLimit($blog_info->categoryid,0,2);
+								$recentBlog = $Blog->getAllFeaturedBlogsWithLimit(0,2);
 								if ($recentBlog) {
 									foreach ($recentBlog as $key => $blog) {
 										if (isset($blog->image) && !empty($blog->image) && file_exists(UPLOAD_PATH.'blog/'.$blog->image)) {
@@ -395,114 +399,37 @@
 											$thumbnail = UPLOAD_URL.'noimg.jpg';
 										}
 							?>
-					<!-- post -->
+						<!-- post -->
+						<div class="col-md-12">
 
-					<div class="post post-thumb">
+							<div class="post post-thumb">
 
-						<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img
-								src="<?php echo($thumbnail); ?>" class="img-responsive" style="height:300px;"></a>
-						<div class="post-body">
-							<!-- for date with category name -->
-							<div class="post-meta">
-								<a class="post-category <?php echo CAT_COLOR[$blog->categoryid%4] ?>"
-									href="category?id=<?php echo $blog->categoryid ?>"><?php echo $blog->category; ?></a>
-								<!-- error ingetting name of category -->
-								<span
-									class="post-date"><?php echo date("M d, Y",strtotime($blog->created_date)); ?></span>
+								<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img
+										src="<?php echo($thumbnail); ?>" style="height:200px;"
+										class="img-responsive"></a>
+								<div class="post-body">
+									<!-- for date with category name -->
+									<div class="post-meta">
+										<a class="post-category <?php echo CAT_COLOR[$blog->categoryid%4] ?>"
+											href="category?id=<?php echo $blog->categoryid ?>"><?php echo $blog->category; ?></a>
+										<!-- error ingetting name of category -->
+										<span
+											class="post-date"><?php echo date("M d, Y",strtotime($blog->created_date)); ?></span>
+									</div>
+									<h3 class="post-title"><a
+											href="blog-post?id=<?php echo $blog->id ?>"><?php echo $blog->title; ?></a>
+									</h3>
+
+								</div>
 							</div>
-							<h3 class="post-title"><a
-									href="blog-post?id=<?php echo $blog->id ?>"><?php echo $blog->title; ?></a></h3>
-
 						</div>
-					</div>
-					<!-- /post -->
-					<?php
+						<!-- /post -->
+						<?php
 									}
 								}
 							?>
+					</div>
 					<!-- /post widget -->
-
-					<!-- catagories -->
-					<div class="aside-widget">
-						<div class="section-title">
-							<h2>Catagories</h2>
-						</div>
-						<div class="category-widget">
-							<ul>
-								<?php 
-										if ($categories) {
-											foreach ($categories as $key => $category) {
-									?>
-								<li><a href="category?id=<?php echo $category->id ?>"
-										class="<?php echo CAT_COLOR[$category->id%4] ?>"><?php echo($category->categoryname) ?><span>
-											<?php 
-										//to get count of no of posts
-											$Count = $Blog->getNumberBlogByCategory($category->id);
-											echo $Count[0]->total;
-										?>
-										</span></a></li>
-								<?php
-											}
-										}
-									?>
-
-							</ul>
-						</div>
-					</div>
-					<!-- /catagories -->
-
-					<!-- tags -->
-					<div class="aside-widget">
-						<div class="tags-widget">
-
-							<ul>
-								<?php 
-								#to update categories dynamically 
-									$Category = new category();
-									$categories = $Category->getAllCategory();
-									if ($categories) {
-										foreach ($categories as $key => $category) {
-								?>
-
-								<li><a
-										href="category?id=<?php echo $category->id ?>"><?php echo $category->categoryname; ?></a>
-								</li>
-								<?php
-										}
-									}
-								?>
-
-							</ul>
-						</div>
-					</div>
-					<!-- /tags -->
-
-					<!-- archive -->
-					<div class="aside-widget">
-						<div class="section-title">
-							<h2>Archive</h2>
-						</div>
-						<div class="archive-widget">
-							<ul>
-								<?php 
-										$Archive = new archive();
-										$archives = $Archive->getAllArchive();
-										if ($archives) {
-											foreach ($archives as $key => $archive) {
-									?>
-								<li><a
-										href="archive?id=<?php echo $archive->id ?>"><?php echo date('M d, Y',strtotime($archive->date)); ?></a>
-								</li>
-								<?php
-											}
-										}
-									?>
-							</ul>
-						</div>
-					</div>
-					<!-- /archive -->
-				</div>
-				<!-- /aside -->
 			</div>
 			<!-- /row -->
 		</div>

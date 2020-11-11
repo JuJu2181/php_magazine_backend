@@ -10,7 +10,7 @@
 						<a href="index" class="logo"><img src="./assets/img/BS/logo.png" alt=""></a>
 					</div>
 					<ul class="footer-nav">
-						<li><a href="blank">Privacy Policy</a></li>
+						<li><a href="privacy">Privacy Policy</a></li>
 						<li><a href="advertisement">Advertisement</a></li>
 					</ul>
 					<div class="footer-copyright">
@@ -100,16 +100,18 @@
 <!-- added jquery to laod more -->
 <script>
 	var pathName = window.location.pathname;
-	to_show = 2;
-	load_on_click = 1;
-	if (pathName == "/index"){
-		to_show = 4;
-		load_on_click= 3;
+	to_show = 4;
+	load_on_click = 3;
+	if (pathName == "/category"){
+		to_show = 2;
+		load_on_click= 1;
 	}
 	$('.loadPost').slice(0,to_show).show();
+
 	if($('.loadPost:hidden').length === 0){
 			$('#loadMore').fadeOut();
-		}    
+		}
+		    
 	$('#loadMore').on('click',function(){
 		$('.loadPost:hidden').slice(0,load_on_click).slideDown();	  
 
